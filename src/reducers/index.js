@@ -4,6 +4,7 @@ import { createAsyncReducer } from './helpers';
 import {
   OPEN_MOVIE_TAB,
   GET_MOVIES,
+  GET_GENRES,
   GET_MOVIE_DETAILS,
   SEARCH_MOVIES,
   GET_ACTOR_DETAILS
@@ -36,6 +37,9 @@ const rootReducer = combineReducers({
   tab: tab,
   movies: createAsyncReducer(GET_MOVIES, {
     [`${GET_MOVIES}_SUCCESS`]: moviesSuccessReducer
+  }),
+  genres: createAsyncReducer(GET_GENRES, {
+    [`${GET_GENRES}_SUCCESS`]: moviesSuccessReducer
   }),
   actors: createAsyncReducer(GET_ACTOR_DETAILS, {
     [`${GET_ACTOR_DETAILS}_SUCCESS`]: moviesSuccessReducer

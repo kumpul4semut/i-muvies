@@ -18,6 +18,9 @@ class MoviesContainer extends Component {
     if (!movies.isLoading && movies.response) {
       total_pages = movies.response.total_pages;
     }
+    const split = location.pathname.split('/');
+    let title = split[2] === 'movie' ? split[1] : split[2];
+
     return (
       <Main>
         <Container style={{ paddingTop: '20px', minHeight: '70vh' }}>
@@ -25,7 +28,7 @@ class MoviesContainer extends Component {
             <MoviesType
               movies={movies}
               relativeUrl={location.pathname}
-              title="Movies"
+              title={title.toUpperCase()}
             />
             <div id="pagination">
               <nav>

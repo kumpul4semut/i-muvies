@@ -13,7 +13,11 @@ class MoviesDetailContainer extends Component {
       this.props.__construct(movieId);
     }
   }
-
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.__construct(nextProps.match.params.id);
+    }
+  }
   render() {
     const { movie, actors, pathname } = this.props;
     return (

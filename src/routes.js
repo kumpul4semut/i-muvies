@@ -15,7 +15,12 @@ const routes = () => (
       <Route path="/movie/:id/:id" exact component={MoviesDetailContainer} />
       <Route path="/discover/:id" exact component={MoviesContainer} />
       <Route path="/discover/:id/:id" exact component={MoviesDetailContainer} />
-      <Route path="/genre" exact component={GenreContainer} />
+      <Route path="/genre/:id/:id" exact component={GenreContainer} />
+      <Route
+        path="/genre/:id/:id/:id"
+        exact
+        component={MoviesDetailContainer}
+      />
     </Switch>
   </Layout>
 );

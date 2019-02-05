@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo.png';
 import { connect } from 'react-redux';
-import { searchMovies, getMovieDetails, getActorDetails } from '../actions';
+import { searchMovies, getGenres } from '../actions';
 import {
   Header,
   Container,
@@ -9,7 +9,9 @@ import {
   Menu,
   MenuItem,
   Search,
-  SearchSuggest
+  SearchSuggest,
+  SubMenuItem,
+  SubMenuLink
 } from '../modules';
 
 class Headers extends Component {
@@ -17,6 +19,9 @@ class Headers extends Component {
     str: '',
     mobile: false
   };
+  componentDidMount() {
+    this.props.getGenres();
+  }
   mobileClickHandler = () => {
     this.setState({ ...this.state, mobile: !this.state.mobile });
   };
@@ -26,20 +31,30 @@ class Headers extends Component {
     }
     this.setState({ ...this.state, str: event.target.value });
   };
+
   submitHandler = () => {};
   render() {
-    console.log();
-    const { response } = this.props.movieSearch;
     let src = <SearchSuggest isActive={false} />;
     if (this.state.str.length > 3) {
+      const { response } = this.props.movieSearch;
       if (response && response.results.length > 0) {
-        src = (
-          <SearchSuggest
-            isActive={true}
-            results={response.results}
-            __construct={this.props.__construct}
-          />
-        );
+        src = <SearchSuggest isActive={true} results={response.results} />;
+      }
+    }
+    const { response, isLoading } = this.props.genres;
+    let renderGenres = null;
+    if (isLoading === false && response) {
+      if (response.genres && response.genres.length > 0) {
+        renderGenres = response.genres.map(genre => (
+          <SubMenuLink
+            key={genre.id}
+            href={`/genre/${genre.name.toLowerCase().replace(' ', '-')}/${
+              genre.id
+            }`}
+          >
+            {genre.name}
+          </SubMenuLink>
+        ));
       }
     }
 
@@ -55,7 +70,9 @@ class Headers extends Component {
           </div>
           <Menu>
             <MenuItem href="/" title="MOVIE" />
-            <MenuItem href="/genre" title="GENRE" />
+            <MenuItem href="#!" title="GENRE">
+              <SubMenuItem>{renderGenres}</SubMenuItem>
+            </MenuItem>
           </Menu>
           <Search
             active={this.state.mobile}
@@ -73,17 +90,18 @@ class Headers extends Component {
 
 const mapStateToProps = state => {
   return {
-    movieSearch: state.movieSearch
+    movieSearch: state.movieSearch,
+    genres: state.genres
   };
 };
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = dispatch => {
   return {
     searchMovie: query => {
       dispatch(searchMovies(query, 1));
     },
-    __construct: id => {
-      dispatch(getMovieDetails(id));
-      dispatch(getActorDetails(id));
+
+    getGenres: () => {
+      dispatch(getGenres());
     }
   };
 };

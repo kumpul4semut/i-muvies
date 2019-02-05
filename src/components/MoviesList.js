@@ -1,7 +1,7 @@
 import React from 'react';
 import { MoviesListContent, MoviesListItem } from '../modules';
 
-const moviesList = ({ movies, relativeUrl, children }) => {
+const moviesList = ({ movies, relativeUrl }) => {
   let rendered = null;
   if (movies && movies.length > 0) {
     movies.splice(0, 2);

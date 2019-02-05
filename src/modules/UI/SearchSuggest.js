@@ -18,14 +18,9 @@ const searchSuggest = ({ isActive, results, __construct }) => {
                   })`
                 }}
                 className="thumb"
-                onClick={() => __construct(r.id)}
               />
               <div className="ss-info">
-                <Link
-                  to={`/movie/search/${r.id}`}
-                  className="ss-title"
-                  onClick={() => __construct(r.id)}
-                >
+                <Link to={`/movie/search/${r.id}`} className="ss-title">
                   {r.title}{' '}
                   {r.release_date
                     ? `( ${r.release_date.split('-')[0]} )`
