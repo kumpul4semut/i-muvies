@@ -17,13 +17,17 @@ import {
 class Headers extends Component {
   state = {
     str: '',
-    mobile: false
+    mobile: false,
+    search: false
   };
   componentDidMount() {
     this.props.getGenres();
   }
   mobileClickHandler = () => {
     this.setState({ ...this.state, mobile: !this.state.mobile });
+  };
+  mobileSearchHandler = () => {
+    this.setState({ ...this.state, search: !this.state.search });
   };
   strChangeHandler = event => {
     if (event.target.value.length > 3) {
@@ -62,20 +66,24 @@ class Headers extends Component {
       <Header>
         <Container>
           <Logo image={logo} />
-          <div className="mobile-menu">
+          <div
+            className={`mobile-menu active ${
+              this.state.mobile ? 'active' : ''
+            }`}
+          >
             <i className="fa fa-reorder" onClick={this.mobileClickHandler} />
           </div>
           <div className="mobile-search">
-            <i className="fa fa-seacrh" />
+            <i className="fa fa-search" onClick={this.mobileSearchHandler} />
           </div>
-          <Menu>
+          <Menu active={this.state.mobile}>
             <MenuItem href="/" title="MOVIE" />
-            <MenuItem href="#!" title="GENRE">
+            <MenuItem href="#!" title="GENRE" category="genre">
               <SubMenuItem>{renderGenres}</SubMenuItem>
             </MenuItem>
           </Menu>
           <Search
-            active={this.state.mobile}
+            active={this.state.search}
             searchSubmit={this.submitHandler}
             handleChange={e => this.strChangeHandler(e)}
             movieSearch={this.props.movieSearch}

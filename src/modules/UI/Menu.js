@@ -1,7 +1,7 @@
 import React from 'react';
 
 const menu = ({ children, active }) => (
-  <div id="menu" className={active}>
+  <div id="menu" className={active ? 'active' : ''}>
     <ul className="top-menu">{children}</ul>
     <div className="clearfix" />
   </div>
