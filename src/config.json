@@ -1,0 +1,41 @@
+{
+  "MOVIE_DB_API_KEY": "afae2094aca89c44b5b8b9f44db39c22",
+  "MOVIE_DB_BASE_URL": "https://api.themoviedb.org/3",
+
+  "movies": {
+    "type": "topView",
+    "title": "MOVIES",
+    "tabs": [
+      { "type": "Popular", "relativeUrl": "/movie/popular", "page": 1 },
+      { "type": "Upcomming", "relativeUrl": "/movie/upcoming", "page": 1 },
+      { "type": "Top Rated", "relativeUrl": "/movie/top_rated", "page": 1 },
+      { "type": "Now Playing", "relativeUrl": "/movie/now_playing", "page": 1 },
+      { "type": "Trending ", "relativeUrl": "/movie/top_rated", "page": 3 },
+      { "type": "Discover", "relativeUrl": "/discover/movie", "page": 2 }
+    ]
+  },
+  "streaming": {
+    "type": "latestmovie",
+    "title": "Streaming",
+    "tabs": [
+      { "type": "Anime", "relativeUrl": "/movie/popular", "page": 1 },
+      { "type": "Japan", "relativeUrl": "/movie/upcoming", "page": 1 },
+      { "type": "Action", "relativeUrl": "/movie/top_rated", "page": 1 },
+      { "type": "On Air", "relativeUrl": "/movie/now_playing", "page": 1 },
+      { "type": "Live", "relativeUrl": "/trending/all/day", "page": 1 },
+      { "type": "Popular Today", "relativeUrl": "/discover/movie", "page": 2 }
+    ]
+  },
+  "recomen": {
+    "type": "latestmovie",
+    "title": "Recomendation",
+    "tabs": [
+      { "type": "Jepang", "relativeUrl": "/movie/popular", "page": 1 },
+      { "type": "Korea", "relativeUrl": "/movie/upcoming", "page": 1 },
+      { "type": "Sub English", "relativeUrl": "/movie/top_rated", "page": 1 },
+      { "type": "Sub Indo", "relativeUrl": "/movie/now_playing", "page": 1 },
+      { "type": "Kartun ", "relativeUrl": "/trending/all/day", "page": 1 },
+      { "type": "Tv show", "relativeUrl": "/discover/movie", "page": 2 }
+    ]
+  }
+}
