@@ -1,18 +1,21 @@
-# video-react
+# React I-Movies
 
 [![npm version](https://badge.fury.io/js/video-react.svg)](https://badge.fury.io/js/video-react) [![Build Status](https://travis-ci.org/video-react/video-react.svg?branch=master)](https://travis-ci.org/video-react/video-react) [![Package Quality](http://npm.packagequality.com/shield/video-react.svg)](http://packagequality.com/#?package=video-react)
 [![codecov](https://codecov.io/gh/video-react/video-react/branch/master/graph/badge.svg)](https://codecov.io/gh/video-react/video-react)
 
-Video.React is a web video player built from the ground up for an HTML5 world using React library.
+Adalah script untuk browser film terinspirasi web online muvie
 
 ## Installation
 
-Install `video-react` and **peer dependencies** via NPM
+Install `i-movies ` and **beserta dependencia** via NPM
 
 ```sh
-npm install --save video-react react react-dom
-```
+git clone git clone https://github.com/adipatiarya/i-muvies.git
 
+```
+```sh
+cd i-movies
+```
 import css in your app or add video-react styles in your page
 
 ```jsx
