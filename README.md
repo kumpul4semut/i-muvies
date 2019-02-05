@@ -6,6 +6,9 @@ Adalah script untuk browser film terinspirasi dari web online
 di bangun menggunakan React dan redux sebagai managemen statenya
 dan cocok buat latihan ataupun langsung di gunakan.
 
+## DEMO
+https://i-movies-74fc7.firebaseapp.com/
+
 ## Installation
 
 Build `i-movies ` dan **beserta dependencia** via NPM
