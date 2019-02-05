@@ -11,7 +11,7 @@ dan cocok buat latihan ataupun langsung di gunakan.
 Build `i-movies ` dan **beserta dependencia** via NPM
 
 ```sh
-git clone git clone https://github.com/adipatiarya/i-muvies.git
+git clone https://github.com/adipatiarya/i-muvies.git
 
 ```
 ```sh
