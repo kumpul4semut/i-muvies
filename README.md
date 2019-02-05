@@ -1,7 +1,6 @@
 # React I-Movies
 
-[![npm version](https://badge.fury.io/js/video-react.svg)](https://badge.fury.io/js/video-react) [![Build Status](https://travis-ci.org/video-react/video-react.svg?branch=master)](https://travis-ci.org/video-react/video-react) [![Package Quality](http://npm.packagequality.com/shield/video-react.svg)](http://packagequality.com/#?package=video-react)
-[![codecov](https://codecov.io/gh/video-react/video-react/branch/master/graph/badge.svg)](https://codecov.io/gh/video-react/video-react)
+# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
 Adalah script untuk browser film terinspirasi dari web online
 
@@ -19,7 +18,7 @@ cd i-movies
 ```sh
 npm install
 ```
-Menjalankan di mode development msih di 
+Menjalankan di mode development
 ```sh
 cd i-movies
 ```
@@ -35,5 +34,6 @@ atau jalankan mode produksi
 npm run build
 ```
 ```sh
-pindahkan folder is build di hosting  root public_html
+pindahkan isi build ke root folder public_html
 ```
+## 
