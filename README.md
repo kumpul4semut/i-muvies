@@ -3,11 +3,11 @@
 [![npm version](https://badge.fury.io/js/video-react.svg)](https://badge.fury.io/js/video-react) [![Build Status](https://travis-ci.org/video-react/video-react.svg?branch=master)](https://travis-ci.org/video-react/video-react) [![Package Quality](http://npm.packagequality.com/shield/video-react.svg)](http://packagequality.com/#?package=video-react)
 [![codecov](https://codecov.io/gh/video-react/video-react/branch/master/graph/badge.svg)](https://codecov.io/gh/video-react/video-react)
 
-Adalah script untuk browser film terinspirasi web online muvie
+Adalah script untuk browser film terinspirasi dari web online
 
 ## Installation
 
-Install `i-movies ` and **beserta dependencia** via NPM
+Build `i-movies ` dan **beserta dependencia** via NPM
 
 ```sh
 git clone git clone https://github.com/adipatiarya/i-muvies.git
@@ -16,18 +16,27 @@ git clone git clone https://github.com/adipatiarya/i-muvies.git
 ```sh
 cd i-movies
 ```
-import css in your app or add video-react styles in your page
-
-```jsx
-import '~video-react/dist/video-react.css'; // import css
+```sh
+npm install
 ```
-
-or
-
-```scss
-@import '~video-react/styles/scss/video-react'; // or import scss
+Menjalankan di mode development msih di 
+```sh
+cd i-movies
 ```
+```sh
+npm start
+```
+```sh
+buka browser localhost:3000
+```
+atau jalankan mode produksi
 
+```sh
+npm run build
+```
+```sh
+pindahkan folder is build di hosting  root public_html
+```
 or
 
 ```html
