@@ -1,5 +1,6 @@
 import React from 'react';
 import Video from './Video';
+
 import {
   MainContent,
   BreadCum,
@@ -10,6 +11,7 @@ import {
   MdescBodyLeft,
   MdescBodyItem
 } from '../modules';
+import { buildBread } from './Helpers';
 const movieDetails = ({ movie, actors, relativeUrl }) => {
   const { isLoading, response } = movie;
   let rendered = <div className="loadinghdo" />;
@@ -36,18 +38,15 @@ const movieDetails = ({ movie, actors, relativeUrl }) => {
         return cast;
       }
     }
-    const spliting = relativeUrl.split('/');
+    const bread = buildBread(relativeUrl);
 
     return (
       <MainContent detail>
         <MainContent category>
           <BreadCum>
             <BreadCumItem href="/" name="Home" />
-            <BreadCumItem href="/" name={spliting[1]} />
-            <BreadCumItem
-              href={`/${spliting[1]}/${spliting[2]}`}
-              name={`${spliting[2].replace('_', ' ')}`}
-            />
+            <BreadCumItem href="/" name={bread.default} />
+            <BreadCumItem href={bread.link} name={bread.name} />
 
             <BreadCumItem
               active={true}

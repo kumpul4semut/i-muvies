@@ -1,6 +1,6 @@
 const TMDB_IMAGE_BASE_URL = (width = 300) =>
   `https://image.tmdb.org/t/p/w${width}`;
-const spliter = str => {
+export const spliter = str => {
   if (str) {
     let newStr = str.split('-');
     return newStr[0];
@@ -25,4 +25,20 @@ export const getMoviesList = moviesResponse => {
   return [];
 };
 
-export { spliter };
+export const buildBread = url => {
+  let split = url.split('/');
+
+  let link = `/${split[1]}/${split[2]}`;
+
+  if (split.length > 4) {
+    link = `/${split[1]}/${split[2]}/${split[3]}`;
+  }
+
+  let name = `${split[2].replace('_', ' ')}`;
+
+  return {
+    default: split[1],
+    link,
+    name
+  };
+};
