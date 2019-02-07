@@ -2,6 +2,7 @@ import {
   OPEN_MOVIE_TAB,
   SEARCH_MOVIES,
   GET_MOVIES,
+  GET_VIDEO_TRAILER,
   GET_GENRES,
   GET_MOVIE_DETAILS,
   GET_ACTOR_DETAILS
@@ -33,3 +34,5 @@ export const openMovieTab = (relativeUrl, actionType, page = 1) => {
 
 export const getDiscover = (query, page = 1) =>
   createAsyncActionCreator(GET_MOVIES, ACTION.srcDiscover, { query, page });
+export const getVideoTrailer = id =>
+  createAsyncActionCreator(GET_VIDEO_TRAILER, ACTION.srcVideoTrailer, id);

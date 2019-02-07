@@ -7,7 +7,8 @@ import {
   GET_GENRES,
   GET_MOVIE_DETAILS,
   SEARCH_MOVIES,
-  GET_ACTOR_DETAILS
+  GET_ACTOR_DETAILS,
+  GET_VIDEO_TRAILER
 } from '../constant/ActionTypes';
 
 const tab = (state = { tabId: '' }, action) => {
@@ -37,6 +38,9 @@ const rootReducer = combineReducers({
   tab: tab,
   movies: createAsyncReducer(GET_MOVIES, {
     [`${GET_MOVIES}_SUCCESS`]: moviesSuccessReducer
+  }),
+  trailer: createAsyncReducer(GET_VIDEO_TRAILER, {
+    [`${GET_VIDEO_TRAILER}_SUCCESS`]: moviesSuccessReducer
   }),
   genres: createAsyncReducer(GET_GENRES, {
     [`${GET_GENRES}_SUCCESS`]: moviesSuccessReducer

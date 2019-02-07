@@ -1,22 +1,25 @@
 import React from 'react';
+import 'video-react/dist/video-react.css';
+
+import { Player, LoadingSpinner } from 'video-react';
 
 import {
   MainContent,
   BreadCum,
   BreadCumItem,
   MovieDescription,
-  MovieInfo,
   MdescBody,
-  MdescBodyRight,
   MdescBodyLeft,
   MdescBodyItem
 } from '../modules';
+import { Redirect } from 'react-router-dom';
 import { buildBread } from './Helpers';
+import Trailer from './Trailer';
 
-const movieDetails = ({ movie, actors, relativeUrl }) => {
+const videoPlayer = ({ movie, actors, relativeUrl, type, src }) => {
   const { isLoading, response } = movie;
-  let rendered = <div className="loadinghdo" />;
 
+  let rendered = <Redirect to="/" />;
   if (!isLoading && response) {
     let cast = <div className="loadinghdo" />;
     let director = '';
@@ -56,11 +59,16 @@ const movieDetails = ({ movie, actors, relativeUrl }) => {
             />
           </BreadCum>
 
-          <MovieInfo
-            poster={response.backdrop_path}
-            title={response.title}
-            id={response.id}
-          />
+          {type === 'movie' ? (
+            <Player
+              src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+              autoPlay={true}
+            >
+              <LoadingSpinner />
+            </Player>
+          ) : (
+            <Trailer src={src} />
+          )}
 
           <MovieDescription
             title={response.title}
@@ -79,18 +87,6 @@ const movieDetails = ({ movie, actors, relativeUrl }) => {
                 {director}
                 {cast}
               </MdescBodyLeft>
-              <MdescBodyRight>
-                <MdescBodyItem title="Duration">
-                  {response.runtime} Minute
-                </MdescBodyItem>
-                <MdescBodyItem title="Release Date">
-                  {response.release_date}
-                </MdescBodyItem>
-                <MdescBodyItem
-                  title="Countries"
-                  data={response.production_countries}
-                />
-              </MdescBodyRight>
             </MdescBody>
           </MovieDescription>
         </MainContent>
@@ -101,4 +97,4 @@ const movieDetails = ({ movie, actors, relativeUrl }) => {
   return rendered;
 };
 
-export default movieDetails;
+export default videoPlayer;

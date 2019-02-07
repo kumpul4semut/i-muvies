@@ -23,6 +23,11 @@ export const srcDiscover = async ({ query, page }) => {
   const fullUrl = `${MOVIE_DB_BASE_URL}/discover/movie?api_key=${MOVIE_DB_API_KEY}&language=en-US&${query}&include_adult=false&include_video=false&page=${page}`;
   return fetch(fullUrl);
 };
+export const srcVideoTrailer = async id => {
+  //VIDEO SRC
+  const fullUrl = `${MOVIE_DB_BASE_URL}/movie/${id}/videos?api_key=${MOVIE_DB_API_KEY}`;
+  return fetch(fullUrl);
+};
 export const genres = async () => {
   const fullUrl = `${MOVIE_DB_BASE_URL}/genre/movie/list?api_key=${MOVIE_DB_API_KEY}`;
   return fetch(fullUrl);

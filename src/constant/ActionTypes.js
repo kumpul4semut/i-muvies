@@ -3,4 +3,5 @@ export const SEARCH_MOVIES = 'SEARCH_MOVIES';
 export const GET_MOVIE_DETAILS = 'GET_MOVIE_DETAILS';
 export const GET_MOVIES = 'GET_MOVIES';
 export const GET_GENRES = 'GET_GENRES';
+export const GET_VIDEO_TRAILER = 'GET_VIDEO_TRAILER';
 export const GET_ACTOR_DETAILS = 'GET_ACTOR_DETAILS';
